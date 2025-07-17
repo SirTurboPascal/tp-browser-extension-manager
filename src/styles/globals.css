@@ -46,3 +46,11 @@
 	--font-*: initial;
 	--font-noto-sans: 'Noto Sans', sans-serif;
 }
+
+@utility dark-gradient {
+	background: linear-gradient(to bottom, #040918, #091540);
+}
+
+@utility light-gradient {
+	background: linear-gradient(to bottom, #ebf2fc, #eef8f9);
+}
