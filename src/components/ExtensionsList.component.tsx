@@ -1,6 +1,6 @@
 'use client';
 
-import { map } from 'lodash';
+import { gt, map, size } from 'lodash';
 import { useEffect, useState } from 'react';
 
 import Extension from '@/components/Extension.component';
@@ -8,6 +8,14 @@ import IExtension from '@/model/interfaces/IExtension.interface';
 
 const ExtensionsList = () => {
 	const [extensions, setExtensions] = useState<IExtension[]>([]);
+
+	const handleRemove = (extension: IExtension) => {
+		const { id, name } = extension;
+
+		if (window.confirm(`Do you really want to remove ${name} from your extensions list?`)) {
+			setExtensions(extensions.filter((extension) => extension.id !== id));
+		}
+	};
 
 	useEffect(() => {
 		fetch('/data/data.json').then((response) => {
@@ -21,11 +29,17 @@ const ExtensionsList = () => {
 		<div className='flex flex-col'>
 			<h1 className='desktop:text-left my-[32px] shrink-0 cursor-default text-center text-[36px] font-bold text-neutral-900 select-none'>Extensions List</h1>
 
-			<ul className='desktop:grid-cols-3 grid grid-cols-1 gap-4'>
-				{map(extensions, (extension) => {
-					return <Extension key={extension.id} extension={extension} />;
-				})}
-			</ul>
+			{gt(size(extensions), 0) ? (
+				<ul className='desktop:grid-cols-3 grid grid-cols-1 gap-4'>
+					{map(extensions, (extension) => {
+						return <Extension key={extension.id} extension={extension} onRemove={handleRemove} />;
+					})}
+				</ul>
+			) : (
+				<div className='flex justify-center py-[32px]'>
+					<p className='cursor-default text-[14px] text-neutral-600 select-none'>Nothing here to see...</p>
+				</div>
+			)}
 		</div>
 	);
 };
