@@ -5,7 +5,7 @@ interface IContainerProps {
 }
 
 const Container: FC<IContainerProps> = ({ children }) => {
-	return <div className='desktop:max-w-[1400px] mx-auto flex h-dvh max-w-[360px] flex-col py-[16px]'>{children}</div>;
+	return <div className='desktop:max-w-[1400px] mx-auto flex max-w-[360px] grow flex-col py-[16px]'>{children}</div>;
 };
 
 export default Container;
