@@ -13,8 +13,8 @@ interface ILayoutProps {
 
 const Layout: FC<ILayoutProps> = ({ children }) => {
 	return (
-		<html className='overflow-hidden'>
-			<body className='font-noto-sans light-gradient h-dvh overflow-y-auto text-neutral-900 antialiased'>{children}</body>
+		<html className='overflow-hidden bg-neutral-200'>
+			<body className='font-noto-sans h-dvh overflow-y-auto text-neutral-900 antialiased'>{children}</body>
 		</html>
 	);
 };
