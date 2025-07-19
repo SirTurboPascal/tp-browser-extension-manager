@@ -3,19 +3,25 @@ import Image from 'next/image';
 import { FC } from 'react';
 
 import Button from '@/components/Button.component';
+import Switch from '@/components/Switch.component';
 import IExtension from '@/model/interfaces/IExtension.interface';
 
 interface IExtensionProps {
 	extension: IExtension;
 
+	onDisable: (extension: IExtension) => void;
 	onRemove: (extension: IExtension) => void;
 }
 
-const Extension: FC<IExtensionProps> = ({ extension, onRemove }) => {
-	const { description, id, logoUrl, name } = extension;
+const Extension: FC<IExtensionProps> = ({ extension, onDisable, onRemove }) => {
+	const { description, enabled, id, logoUrl, name } = extension;
 
-	const handleClick = () => {
+	const handleButtonClick = () => {
 		onRemove(extension);
+	};
+
+	const handleSwitchChange = () => {
+		onDisable(extension);
 	};
 
 	return (
@@ -32,8 +38,10 @@ const Extension: FC<IExtensionProps> = ({ extension, onRemove }) => {
 			</div>
 
 			<div className='grow'></div>
-			<div className='flex items-center'>
-				<Button onClick={handleClick}>Remove</Button>
+			<div className='flex items-center justify-between'>
+				<Button onClick={handleButtonClick}>Remove</Button>
+
+				<Switch checked={enabled} name={`${id}_enabled`} onChange={handleSwitchChange} />
 			</div>
 		</li>
 	);

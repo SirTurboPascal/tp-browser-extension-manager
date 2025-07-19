@@ -4,83 +4,83 @@
 		"id": "19a13917-3dba-4f3f-8b59-1cc76487be87",
 		"logoUrl": "/images/logo-devlens.svg",
 		"name": "DevLens",
-		"isActive": true
+		"enabled": true
 	},
 	{
 		"description": "Instantly analyze and copy CSS from any webpage element.",
 		"id": "74171d43-b98b-4faa-b072-f5aea8b5d3ad",
 		"logoUrl": "/images/logo-style-spy.svg",
 		"name": "StyleSpy",
-		"isActive": true
+		"enabled": true
 	},
 	{
 		"description": "Optimizes browser resource usage to accelerate page loading.",
 		"id": "d5eda495-d7c1-488b-b447-f4704e2f0aa3",
 		"logoUrl": "/images/logo-speed-boost.svg",
 		"name": "SpeedBoost",
-		"isActive": false
+		"enabled": false
 	},
 	{
 		"description": "Formats, validates, and prettifies JSON responses in-browser.",
 		"id": "6d064439-bf4f-4e39-85b9-50b531f763da",
 		"logoUrl": "/images/logo-json-wizard.svg",
 		"name": "JSONWizard",
-		"isActive": true
+		"enabled": true
 	},
 	{
 		"description": "Organizes browser tabs into groups and sessions.",
 		"id": "57112bc5-eeac-488d-a127-064754b9bb61",
 		"logoUrl": "/images/logo-tab-master-pro.svg",
 		"name": "TabMaster Pro",
-		"isActive": true
+		"enabled": true
 	},
 	{
 		"description": "Simulates various screen resolutions directly within the browser.",
 		"id": "fafdcc79-5ec8-4c36-ad09-f73a07116013",
 		"logoUrl": "/images/logo-viewport-buddy.svg",
 		"name": "ViewportBuddy",
-		"isActive": false
+		"enabled": false
 	},
 	{
 		"description": "Enables annotation and notes directly onto webpages for collaborative debugging.",
 		"id": "42a77563-5253-4196-aff9-693c95fc9439",
 		"logoUrl": "/images/logo-markup-notes.svg",
 		"name": "Markup Notes",
-		"isActive": true
+		"enabled": true
 	},
 	{
 		"description": "Overlay customizable grids and alignment guides on any webpage.",
 		"id": "4e4c4851-262d-480a-a7f9-cc691925b6b7",
 		"logoUrl": "/images/logo-grid-guides.svg",
 		"name": "GridGuides",
-		"isActive": false
+		"enabled": false
 	},
 	{
 		"description": "Instantly extracts color palettes from any webpage.",
 		"id": "f3b67723-d99b-4546-9a9b-9e5c97877d65",
 		"logoUrl": "/images/logo-palette-picker.svg",
 		"name": "Palette Picker",
-		"isActive": true
+		"enabled": true
 	},
 	{
 		"description": "Scans and highlights broken links on any page.",
 		"id": "e4f54d44-4413-4d84-953f-d4b4b938d583",
 		"logoUrl": "/images/logo-link-checker.svg",
 		"name": "LinkChecker",
-		"isActive": true
+		"enabled": true
 	},
 	{
 		"description": "Capture and export DOM structures quickly.",
 		"id": "1a490ba9-ed27-455c-9438-d327ea27fa70",
 		"logoUrl": "/images/logo-dom-snapshot.svg",
 		"name": "DOM Snapshot",
-		"isActive": false
+		"enabled": false
 	},
 	{
 		"description": "Enhanced developer console with advanced filtering and logging.",
 		"id": "4ce33daa-2da2-45f4-af61-e6caac9ebcc4",
 		"logoUrl": "/images/logo-console-plus.svg",
 		"name": "ConsolePlus",
-		"isActive": true
+		"enabled": true
 	}
 ]

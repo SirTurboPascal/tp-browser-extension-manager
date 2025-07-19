@@ -1,4 +1,6 @@
 interface IExtension {
+	enabled: boolean;
+
 	description: string;
 	id: string;
 	logoUrl: string;

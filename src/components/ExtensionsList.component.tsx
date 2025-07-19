@@ -1,6 +1,6 @@
 'use client';
 
-import { gt, map, size } from 'lodash';
+import { eq, gt, map, size } from 'lodash';
 import { useEffect, useState } from 'react';
 
 import Extension from '@/components/Extension.component';
@@ -8,6 +8,16 @@ import IExtension from '@/model/interfaces/IExtension.interface';
 
 const ExtensionsList = () => {
 	const [extensions, setExtensions] = useState<IExtension[]>([]);
+
+	const handleDisable = (extension: IExtension) => {
+		const { id } = extension;
+
+		setExtensions(
+			extensions.map((extension) => {
+				return eq(extension.id, id) ? { ...extension, enabled: !extension.enabled } : extension;
+			}),
+		);
+	};
 
 	const handleRemove = (extension: IExtension) => {
 		const { id, name } = extension;
@@ -32,7 +42,7 @@ const ExtensionsList = () => {
 			{gt(size(extensions), 0) ? (
 				<ul className='desktop:grid-cols-3 grid grid-cols-1 gap-4'>
 					{map(extensions, (extension) => {
-						return <Extension key={extension.id} extension={extension} onRemove={handleRemove} />;
+						return <Extension key={extension.id} extension={extension} onDisable={handleDisable} onRemove={handleRemove} />;
 					})}
 				</ul>
 			) : (
