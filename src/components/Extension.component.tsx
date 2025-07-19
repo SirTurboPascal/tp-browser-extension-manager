@@ -25,7 +25,7 @@ const Extension: FC<IExtensionProps> = ({ extension, onDisable, onRemove }) => {
 	};
 
 	return (
-		<li className='bg-neutral-0 flex flex-col gap-4 rounded-[8px] p-[12px] shadow-sm'>
+		<li className='bg-neutral-0 flex flex-col gap-4 rounded-[8px] p-[12px] shadow-md'>
 			<div className='flex gap-4'>
 				<div className='relative size-[48px] shrink-0'>
 					<Image alt={`Logo of ${name}`} src={logoUrl} fill />

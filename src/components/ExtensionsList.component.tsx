@@ -51,7 +51,7 @@ const ExtensionsList = () => {
 	return (
 		<div className='flex flex-col'>
 			<div className='desktop:flex-row my-[32px] flex flex-col justify-between gap-4'>
-				<h1 className='desktop:text-left shrink-0 cursor-default text-center text-[36px] font-bold text-neutral-900 select-none'>Extensions List</h1>
+				<h1 className='desktop:text-left shrink-0 cursor-default text-center text-[36px] font-bold tracking-[-1px] text-neutral-900 select-none'>Extensions List</h1>
 
 				<FilterButtons>
 					<FilterButton checked={eq(filter, 'all')} label='All' name='filter' onChange={handleFilterChange} value='all' />
