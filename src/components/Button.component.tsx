@@ -1,14 +1,25 @@
+import clsx from 'clsx';
+
 import { FC, ReactNode } from 'react';
+
+import ButtonVariant from '@/model/types/ButtonVariant.type';
+
+const baseClassName = 'h-[36px] shrink-0 cursor-pointer text-[14px] rounded-full px-[18px] select-none';
+const buttonVariantClassNames: Record<ButtonVariant, string> = {
+	primary: 'bg-neutral-900 text-neutral-0 font-bold',
+	secondary: 'border-1 border-neutral-300',
+};
 
 interface IButtonProps {
 	children: ReactNode;
+	variant: ButtonVariant;
 
 	onClick: () => void;
 }
 
-const Button: FC<IButtonProps> = ({ children, onClick }) => {
+const Button: FC<IButtonProps> = ({ children, onClick, variant }) => {
 	return (
-		<button className='h-[36px] shrink-0 cursor-pointer rounded-full border-1 border-neutral-300 px-[18px] text-[14px] select-none' onClick={onClick}>
+		<button className={clsx(baseClassName, buttonVariantClassNames[variant])} onClick={onClick}>
 			{children}
 		</button>
 	);

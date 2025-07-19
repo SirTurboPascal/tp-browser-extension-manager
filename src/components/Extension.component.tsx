@@ -39,7 +39,9 @@ const Extension: FC<IExtensionProps> = ({ extension, onDisable, onRemove }) => {
 
 			<div className='grow'></div>
 			<div className='flex items-center justify-between'>
-				<Button onClick={handleButtonClick}>Remove</Button>
+				<Button onClick={handleButtonClick} variant='secondary'>
+					Remove
+				</Button>
 
 				<Switch checked={enabled} name={`${id}_enabled`} onChange={handleSwitchChange} />
 			</div>
