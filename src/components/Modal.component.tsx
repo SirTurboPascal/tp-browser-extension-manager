@@ -34,7 +34,7 @@ const Modal: FC<IModelProps> = ({ children, onClose, open }) => {
 					variants={backdropVariants}
 				>
 					<motion.div
-						className='bg-neutral-0 desktop:w-[560px] flex w-[340px] flex-col gap-4 overflow-hidden rounded-[8px] p-[16px] shadow-md'
+						className='bg-neutral-0 desktop:w-[560px] flex w-[340px] flex-col gap-4 overflow-hidden rounded-[8px] p-[16px] shadow-md dark:bg-neutral-700'
 						animate='visible'
 						exit='exit'
 						initial='hidden'

@@ -74,7 +74,7 @@ const ExtensionsList = () => {
 		<>
 			<div className='flex flex-col'>
 				<div className='desktop:flex-row my-[32px] flex flex-col justify-between gap-4'>
-					<h1 className='desktop:text-left shrink-0 cursor-default text-center text-[36px] font-bold tracking-[-1px] text-neutral-900 select-none'>Extensions List</h1>
+					<h1 className='desktop:text-left dark:text-neutral-0 shrink-0 cursor-default text-center text-[36px] font-bold tracking-[-1px] text-neutral-900 select-none'>Extensions List</h1>
 
 					<FilterButtons>
 						<FilterButton checked={eq(filter, 'all')} label='All' name='filter' onChange={handleFilterChange} value='all' />
@@ -98,11 +98,11 @@ const ExtensionsList = () => {
 
 			<Modal onClose={handleCloseModal} open={modelOpen}>
 				<ModalHeader>
-					<h1 className='grow cursor-default text-[24px] font-bold select-none'>Remove extension</h1>
+					<h1 className='dark:text-neutral-0 grow cursor-default text-[24px] font-bold select-none'>Remove extension</h1>
 				</ModalHeader>
 
 				<ModalBody>
-					<p>Do you really want to remove {isNull(extensionForRemoval) ? 'this extension' : extensionForRemoval.name} from the list? This cannot be undone.</p>
+					<p className='dark:text-neutral-200'>Do you really want to remove {isNull(extensionForRemoval) ? 'this extension' : extensionForRemoval.name} from the list? This cannot be undone.</p>
 				</ModalBody>
 
 				<ModalFooter>

@@ -46,3 +46,5 @@
 	--font-*: initial;
 	--font-noto-sans: 'Noto Sans', sans-serif;
 }
+
+@custom-variant dark (&:where([data-theme=dark], [data-theme=dark] *));
