@@ -1,0 +1,65 @@
+@import 'tailwindcss';
+
+@theme {
+	--breakpoint-*: initial;
+	--breakpoint-md: 768px;
+	--breakpoint-lg: 1440px;
+
+	--color-*: initial;
+	--color-neutral-900: #091540;
+	--color-neutral-800: #202535;
+	--color-neutral-700: #2f364b;
+	--color-neutral-600: #535868;
+	--color-neutral-300: #c6c6c6;
+	--color-neutral-200: #d6e2f5;
+	--color-neutral-100: #eeeeee;
+	--color-neutral-0: #fbfdfe;
+	--color-red-700: #c7231a;
+	--color-red-500: #de4840;
+	--color-red-400: #f25c54;
+
+	--font-*: initial;
+	--font-noto-sans: 'Noto Sans', sans-serif;
+
+	--font-weight-*: initial;
+	--font-weight-bold: 700;
+	--font-weight-medium: 500;
+	--font-weight-normal: 400;
+
+	--radius-*: initial;
+	--radius-full: 999px;
+	--radius-24: 24px;
+	--radius-20: 20px;
+	--radius-16: 16px;
+	--radius-12: 12px;
+	--radius-10: 10px;
+	--radius-8: 8px;
+	--radius-6: 6px;
+	--radius-4: 4px;
+	--radius-0: 0px;
+
+	--spacing-*: initial;
+	--spacing-1000: 80px;
+	--spacing-800: 64px;
+	--spacing-600: 48px;
+	--spacing-500: 40px;
+	--spacing-400: 32px;
+	--spacing-300: 24px;
+	--spacing-250: 20px;
+	--spacing-200: 16px;
+	--spacing-150: 12px;
+	--spacing-125: 10px;
+	--spacing-100: 8px;
+	--spacing-75: 6px;
+	--spacing-50: 4px;
+	--spacing-25: 2px;
+	--spacing-0: 0px;
+}
+
+@utility gradient-dark {
+	background-image: linear-gradient(to bottom, #04091b, #091540);
+}
+
+@utility gradient-light {
+	background-image: linear-gradient(to bottom, #ebf2fc, #eefbf9);
+}
