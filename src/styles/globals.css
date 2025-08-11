@@ -1,5 +1,23 @@
 @import 'tailwindcss';
 
+@font-face {
+	font-display: swap;
+	font-family: 'Geologica';
+	font-style: normal;
+	font-weight: 600;
+
+	src: url('/fonts/Geologica/Geologica-VariableFont_CRSV,SHRP,slnt,wght.ttf') format('truetype');
+}
+
+@font-face {
+	font-display: swap;
+	font-family: 'Noto Sans';
+	font-style: normal;
+	font-weight: 700 500 400;
+
+	src: url('/fonts/NotoSans/NotoSans-VariableFont_wdth,wght.ttf') format('truetype');
+}
+
 @theme {
 	--breakpoint-*: initial;
 	--breakpoint-md: 768px;
@@ -19,10 +37,12 @@
 	--color-red-400: #f25c54;
 
 	--font-*: initial;
+	--font-geologica: 'Geologica', sans-serif;
 	--font-noto-sans: 'Noto Sans', sans-serif;
 
 	--font-weight-*: initial;
 	--font-weight-bold: 700;
+	--font-weight-semibold: 600;
 	--font-weight-medium: 500;
 	--font-weight-normal: 400;
 

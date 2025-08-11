@@ -1,6 +1,9 @@
 import { Metadata } from 'next';
 import { ReactNode } from 'react';
 
+import Container from '@/components/Container';
+import Header from '@/components/Header';
+
 import '@/styles/globals.css';
 
 export const metadata: Metadata = {
@@ -14,7 +17,13 @@ type Props = {
 export default function ({ children }: Props) {
 	return (
 		<html className='gradient-light dark:gradient-dark'>
-			<body className='min-h-dvh'>{children}</body>
+			<body className='min-h-dvh'>
+				<Container>
+					<Header />
+
+					<main>{children}</main>
+				</Container>
+			</body>
 		</html>
 	);
 }
