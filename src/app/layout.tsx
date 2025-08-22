@@ -1,6 +1,9 @@
 import { Metadata } from 'next';
 import { ReactNode } from 'react';
 
+import Container from '@/components/Container';
+import Header from '@/components/Header';
+
 import '@fontsource/geologica/600.css';
 import '@fontsource/noto-sans/400.css';
 import '@fontsource/noto-sans/500.css';
@@ -19,7 +22,13 @@ type Props = {
 export default function ({ children }: Props) {
 	return (
 		<html className='light-gradient dark:dark-gradient overflow-hidden'>
-			<body className='min-h-dvh'>{children}</body>
+			<body className='min-h-dvh'>
+				<Container>
+					<Header />
+
+					<main>{children}</main>
+				</Container>
+			</body>
 		</html>
 	);
 }
