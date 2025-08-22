@@ -1,1 +1,5 @@
-export default function () {}
+import ExtensionsList from '@/components/ExtensionsList';
+
+export default function () {
+	return <ExtensionsList />;
+}

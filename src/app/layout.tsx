@@ -22,7 +22,7 @@ type Props = {
 export default function ({ children }: Props) {
 	return (
 		<html className='light-gradient dark:dark-gradient overflow-hidden'>
-			<body className='min-h-dvh'>
+			<body className='font-noto-sans min-h-dvh antialiased'>
 				<Container>
 					<Header />
 
