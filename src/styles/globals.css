@@ -59,9 +59,9 @@
 }
 
 @utility dark-gradient {
-	@apply bg-gradient-to-b from-[#04091b] to-[#091540];
+	@apply bg-[#04091b] bg-gradient-to-b from-[#04091b] to-[#091540];
 }
 
 @utility light-gradient {
-	@apply bg-gradient-to-b from-[#ebf2fc] to-[#eefbf9];
+	@apply bg-[#ebf2fc] bg-gradient-to-b from-[#ebf2fc] to-[#eefbf9];
 }
