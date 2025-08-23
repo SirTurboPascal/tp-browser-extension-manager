@@ -1,17 +1,19 @@
 import Image from 'next/image';
 
 import Button from '@/components/Button';
+import Switch from '@/components/Switch';
 
 import { IExtension } from '@/model/interfaces/IExtension';
 
 type Props = {
 	extension: IExtension;
 
-	onRemove: (id: string) => void;
+	onDisable: (id: string) => void;
+	onRemove: (extension: IExtension) => void;
 };
 
-export default function ({ extension, onRemove }: Props) {
-	const { description, id, imageUrl, name } = extension;
+export default function ({ extension, onDisable, onRemove }: Props) {
+	const { active, description, id, imageUrl, name } = extension;
 
 	return (
 		<div className='bg-neutral-0 rounded-20 flex h-[200px] flex-col justify-between border-[1px] border-neutral-200 p-250 dark:border-neutral-600 dark:bg-neutral-800'>
@@ -26,8 +28,10 @@ export default function ({ extension, onRemove }: Props) {
 				</div>
 			</div>
 
-			<div className='shrink-0'>
-				<Button onClick={() => onRemove(id)}>Remove</Button>
+			<div className='flex shrink-0 items-center justify-between'>
+				<Button onClick={() => onRemove(extension)}>Remove</Button>
+
+				<Switch checked={active} onChange={() => onDisable(id)} />
 			</div>
 		</div>
 	);

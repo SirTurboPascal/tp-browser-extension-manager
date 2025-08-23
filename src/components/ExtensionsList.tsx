@@ -10,14 +10,25 @@ import { IExtension } from '@/model/interfaces/IExtension';
 export default function () {
 	const [extensions, setExtensions] = useState<IExtension[]>([]);
 
-	const handleRemove = (id: string) => {
-		const extension = extensions.find((extension) => extension.id === id);
+	const handleDisable = (id: string) => {
+		const newExtensions = [...extensions];
+
+		const extension = newExtensions.find((e) => e.id === id);
 		if (extension === undefined) {
 			console.warn(`No extension with id ${id} found.`);
+
+			return;
 		}
 
-		if (window.confirm('Are you sure you want to remove this extension?')) {
-			setExtensions(extensions.filter((extension) => extension.id !== id));
+		extension.active = !extension.active;
+		setExtensions(newExtensions);
+	};
+
+	const handleRemove = (extension: IExtension) => {
+		const { id, name } = extension;
+
+		if (window.confirm(`Are you sure you want to remove ${name} from this list?`)) {
+			setExtensions(extensions.filter((e) => e.id !== id));
 		}
 	};
 
@@ -35,7 +46,7 @@ export default function () {
 
 			<ul className='grid grid-cols-1 gap-150 md:grid-cols-2 lg:grid-cols-3'>
 				{extensions.map((extension) => {
-					return <Extension key={extension.id} extension={extension} onRemove={handleRemove} />;
+					return <Extension key={extension.id} extension={extension} onDisable={handleDisable} onRemove={handleRemove} />;
 				})}
 			</ul>
 		</div>
