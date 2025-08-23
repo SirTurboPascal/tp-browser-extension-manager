@@ -14,7 +14,7 @@ export default function ({ extension, onRemove }: Props) {
 	const { description, id, imageUrl, name } = extension;
 
 	return (
-		<div className='bg-neutral-0 rounded-20 flex h-[200px] flex-col justify-between border-[1px] border-neutral-200 p-200 dark:border-neutral-600 dark:bg-neutral-800'>
+		<div className='bg-neutral-0 rounded-20 flex h-[200px] flex-col justify-between border-[1px] border-neutral-200 p-250 dark:border-neutral-600 dark:bg-neutral-800'>
 			<div className='flex flex-row gap-200'>
 				<div className='relative size-[60px] shrink-0'>
 					<Image alt={`Logo of ${name}`} src={imageUrl} fill unoptimized />
