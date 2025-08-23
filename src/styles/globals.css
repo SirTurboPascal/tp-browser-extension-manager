@@ -65,3 +65,5 @@
 @utility light-gradient {
 	@apply bg-[#ebf2fc] bg-gradient-to-b from-[#ebf2fc] to-[#eefbf9];
 }
+
+@custom-variant dark (&:where([data-theme=dark], [data-theme=dark] *));
