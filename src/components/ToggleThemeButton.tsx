@@ -12,7 +12,6 @@ export default function () {
 	const handleToggle = (event: ChangeEvent<HTMLInputElement>) => {
 		const { checked } = event.target;
 
-		console.log(checked);
 		setTheme(checked ? 'dark' : 'light');
 	};
 

@@ -30,7 +30,9 @@ export default function ({ extension, onDisable, onRemove }: Props) {
 			</div>
 
 			<div className='flex shrink-0 items-center justify-between'>
-				<Button onClick={() => onRemove(extension)}>Remove</Button>
+				<Button onClick={() => onRemove(extension)} variant='contained'>
+					Remove
+				</Button>
 
 				<Switch checked={active} onChange={() => onDisable(id)} />
 			</div>

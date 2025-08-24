@@ -1,5 +1,10 @@
+import FilterContextProvider from '@/components/FilterContextProvider';
 import ExtensionsList from '@/components/ExtensionsList';
 
 export default function () {
-	return <ExtensionsList />;
+	return (
+		<FilterContextProvider>
+			<ExtensionsList />
+		</FilterContextProvider>
+	);
 }

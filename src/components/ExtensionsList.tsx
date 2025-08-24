@@ -1,13 +1,17 @@
 'use client';
 
+import { eq } from 'lodash';
 import { useEffect, useState } from 'react';
 
 import Extension from '@/components/Extension';
 import ExtensionsListHeader from '@/components/ExtensionsListHeader';
 
 import { IExtension } from '@/model/interfaces/IExtension';
+import { useFilterContext } from '@/hooks/useFilterContext';
 
 export default function () {
+	const { filterName } = useFilterContext();
+
 	const [extensions, setExtensions] = useState<IExtension[]>([]);
 
 	const handleDisable = (id: string) => {
@@ -40,12 +44,19 @@ export default function () {
 			});
 	}, []);
 
+	const filteredExtensions =
+		filterName === 'all'
+			? extensions
+			: extensions.filter((e) => {
+					return e.active === eq(filterName, 'active');
+				});
+
 	return (
 		<div>
 			<ExtensionsListHeader />
 
 			<ul className='grid grid-cols-1 gap-150 md:grid-cols-2 lg:grid-cols-3'>
-				{extensions.map((extension) => {
+				{filteredExtensions.map((extension) => {
 					return <Extension key={extension.id} extension={extension} onDisable={handleDisable} onRemove={handleRemove} />;
 				})}
 			</ul>
