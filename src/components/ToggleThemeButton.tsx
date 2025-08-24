@@ -1,13 +1,14 @@
 'use client';
 
-import { ChangeEvent, useEffect, useState } from 'react';
+import { ChangeEvent, useEffect } from 'react';
 
 import IconToggleButton from '@/components/IconToggleButton';
 
 import { ThemeName } from '@/model/types/ThemeName';
+import { useLocalStorage } from '@/hooks/useLocalStorage';
 
 export default function () {
-	const [theme, setTheme] = useState<ThemeName>('light');
+	const [theme, setTheme] = useLocalStorage<ThemeName>('theme', 'light');
 
 	const handleToggle = (event: ChangeEvent<HTMLInputElement>) => {
 		const { checked } = event.target;
